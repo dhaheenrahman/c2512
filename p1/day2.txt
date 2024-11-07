@@ -38,8 +38,6 @@ psuedo code to check whether a number is armstrong or not:
 TeamWork:
 1. To find the square:-
 
- // find the square of a number
-
 pseudofunction:
 
 findSquare(number -> int) -> int
@@ -55,3 +53,17 @@ pseudocode:
 findSquareTest()
 
 2. To swap two numbers:-
+pseudofunction:
+function swapNums(&number1,&number2)
+	temp = number1
+	number1 = number2
+	number2 = temp
+	
+function swapNumsTest()
+	input number1,number2
+	swapNums(number1,number2)
+	print number1,number2
+
+pseudocode:
+swapNumsTest()
+
