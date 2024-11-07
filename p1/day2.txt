@@ -34,3 +34,24 @@ psuedo code to check whether a number is armstrong or not:
       else
         print "Not Armstrong"
       end if
+
+TeamWork:
+1. To find the square:-
+
+ // find the square of a number
+
+pseudofunction:
+
+findSquare(number -> int) -> int
+	return number * number
+
+findSquareTest() 
+	input number
+	square = findSquare(number)
+	print square
+
+pseudocode:
+
+findSquareTest()
+
+2. To swap two numbers:-
