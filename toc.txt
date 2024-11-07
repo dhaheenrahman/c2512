@@ -1,0 +1,567 @@
+LaunchPad FY-25 | C++ Programming on Linux
+
+=====================================Phase 1===============================================
+Foundation Course
+    Programming Fundamentals [Day 1..4]
+        Learning Outcomes:
+            Able to explain basic concepts of machine language, assembly language, assembler, high level language with examples, compiler, linker, interpreter, editor and IDE
+            Given a simple problem statement, find the solution and represent the solution as a pseudo code. (Simple problem is one that can be solved using the basic control statements of a programming language)
+            Convert the pseudocode into a program using C++ programming language following the coding standards by doing one or more of the following operations
+            Store data and perform input/output operations
+            Perform arithmetic operations
+            Perform relational operation and logical operations
+            Perform branching using the if-else statement
+            Write nested if-else statement
+            Perform fixed number of looping using the for statement
+            Perform looping where the number of times is undefined using while and do-while statements
+            Write break and continue statements to alter the normal flow of looping
+            Write nested loops using all the 3 looping constructs
+            Choose the most suitable looping construct for the solution
+            Write the switch-case statement
+        Topics:
+            Introduction to programming
+            Machine Language
+            Assembly Language and Assembler
+            Linker
+            High Level Language, Interpreters and Compilers
+            Problem solving techniques
+            Algorithm
+            Flowchart
+            Pseudocode
+            Hello World Program using C++
+            Introduction to C++ IDE (Visual studio code preferred)
+            Variables and constants
+            Enum
+            C++ coding standards
+            Assignment Operator
+            Arithmetic Operators
+            Binary Operators
+            Relational and Logical Operators
+            The “if” statement
+            The “if-else” statement
+            Nested “if” statements
+            The “else-if” ladder statement
+            The “for” loop
+            The nested “for” loop
+            The “while” loop
+            The nested “while” loop
+            The “do-while” loop
+            The nested “do-while” loop
+            The “break” and “continue” statements
+            The “switch-case” statement
+    Introduction to DBMS & Oracle SQL [Day 5..8]
+        Learning Outcomes:
+            Able to explain different Database models and purpose of DB and RDBMS
+            For a given requirement, the participant should able to write queries for following scenarios 
+            Calculate information across result sets using aggregate queries (sum, min, max, avg, etc.)
+            Insert, update, and delete data
+            Retrieve data from single table based on conditions
+            Retrieve data from multiple tables using Joins
+            Retrieving data using Sub-queries
+        Topics:
+            Introduction to database
+            Introduction to RDBMS
+            Characteristics of Database Management System
+            Data modelling
+            Relational Data modelling
+            Normalization
+            Transaction
+            Types of Keys
+            Introduction to SQL
+            SQL Datatypes
+            SQL Commands (DDL, DML, TCL)
+            SQL Operator
+            SQL Table
+            Select Statement
+            Insert Statement
+            Update Statement
+            Delete Statement
+            Views
+            Sub Queries
+            Aggregate Function
+            SQL Joins
+            Stored procedures
+
+    Introduction to Web Applications  [Day 9]
+        Learning Outcomes:
+            Able to explain the client and server architecture.
+            Able to explain the various tiers of Web Application and examples of technologies used in these tiers
+        Topics:
+            Client server architecture
+            Web Applications
+            Flow of control in a web application
+            Browser as a thin client and Web Server
+            Introduction to HTML, CSS and JavaScript
+            Benefits of web applications
+            Static pages and Dynamic pages
+            Application servers
+            N-tier architecture
+            Difference between web server and application server
+    Software Engineering    [Day 11]
+        Learning Outcomes:
+            Able to explain various phases Software Development Life Cycle
+            Able to explain the Waterfall model
+            Able to explain the Agile Scrum methodologies
+        Topics:
+            Introduction to Software Engineering
+            SDLC
+            STLC
+            Software Engineering models
+            Waterfall model
+            Overview of Spiral model and Prototyping model
+            Agile Scrum methodologies
+            Project Management
+            Various Roles – Developer to Program Manager
+            Code sharing and version control tools – Gitlab / Github
+            Types of projects – Application development and maintenance (Enterprise Applications, 
+            Embedded Applications), Application testing, Product engineering
+
+
+Linux OS basics and shell scripting	 [Day 12..16]
+    Introduction to Linux OS
+        Learning Outcomes:
+            Able to explain the evolution of Linux OS and various distributions of Linux OS.
+            Able to explain the file system in Linux and perform various file management operations
+            For a given requirement, able to write Shell script 
+        Topics:
+            History of Linux and different versions
+            Features of Linux
+            Architecture of Linux
+            Linux Shell
+            Basic Linux Commands 
+                cat
+                mkdir
+                rmdir
+                touch 
+                mv 
+                cp
+                ls
+                pwd
+                grep
+                rm
+                ln
+                ssh
+                scp
+                ps, top, free, 
+            File Permission in Linux
+                User
+                Group
+                Other Users
+                Types of files
+                read, write and execute permissions for files, directories and special files
+                Managing permissions (chown, chmod)
+            Working with basic vi/vim editor
+            Linux Shell scripting
+                Introduction to Bash Shell
+                Using Variables
+                Special Variables
+                Using Arrays
+                Basic Operators
+                Decision Making
+                Shell Loops
+                Loop Control
+                Quoting Mechanisms
+                IO Redirections
+                Shell Functions
+                Handling options
+            Linux environment variables and advanced commands
+                PATH
+                LD_LIBRARY_PATH
+                ldconfig
+                file
+                ldd
+                strings
+                ulimit
+
+C++ Programming
+    Introduction to OOPS using C++  [Day 17, 18]
+        Learning Outcomes:
+            Able to define Object Oriented Programming, Classes and Objects
+            Given a problem statement, identify the classes, data members and functions and write appropriate C++ code to create the class
+            Create objects from classes and use them by calling the appropriate functions
+            Explain Abstraction and Encapsulation with a proper example
+            Identify the need of function overloading and code them
+            Explain Polymorphism with the example of function overloading
+            Identify the need of default and parameterized constructors and code them
+            Identify the need of static data members and functions and code them
+            Identify the need of const data members and code them
+            Identify the need of friend functions and friend classes and write code
+            Identify the need of an array as the data member of a class and write code
+            Identify the need of an array of objects and write code
+            Identify the need of a pointer as the data member of a class and write code
+            Identify the need of an object as the data member of a class (aggregation, “has-a”) and write code
+            Identify the need of creating objects dynamically and write code
+        Topics:
+            Maintainable Programs
+            Structured Programming – Advantages and Disadvantages
+            Object Oriented Programming
+            What is OOPS?
+            Classes and Objects
+            Advantages of OOPS – Introduction to Abstraction, Encapsulation, Polymorphism and Inheritance
+            OOPS Designs with real-time examples.
+            Creating classes with data members and functions in C++
+            Creating objects in C++
+            Access specifiers – private and public
+            Function Overloading
+            Initializing an object using Constructor
+            Default and parameterized constructors
+            The copy constructor
+            Destructors
+            Static data members and static functions
+            The const data members
+            The friend functions
+            The friend classes
+            Array as data member of a class
+            Array of objects
+            Pointer as the data member of a class
+            Pointer to an object
+            The “this” pointer
+            An object as the data member of a class
+            Aggregation and “has-a” relationship
+            Dynamic memory allocation
+            Creating and destroying objects dynamically
+    Inheritance     [Day 19]
+        Learning Outcomes:
+            Given a problem statement, identify the need of inheritance by finding classes with “is a” relationship
+            Able to inherit a class and create a sub class
+            Able to identify the need of the protected access specifier and use it appropriately
+            Able to identify the need to call the base class functions from the sub class functions and write code
+            Able to identify the need to call the base class constructors from the sub class constructors and write code
+            Able to identify the need of function overriding and write code
+            Able to explain polymorphism with function overriding as an example
+            Able to explain the difference between static binding/polymorphism and dynamic (runtime) binding/polymorphism with function overloading and function overriding as examples
+            Able to identify the need of dynamic binding and write code
+            Able to identify the need of multilevel inheritance and code them
+            Able to identify the need of multiple inheritance and code them
+        Topics:
+            Inheritance and its advantages
+            The protected access
+            Calling super class methods
+            Constructors in inheritance
+            Method Overriding
+            Pointer to a base class
+            Virtual functions
+            Dynamic/Runtime Binding and Polymorphism
+            Casting a class
+            Single Inheritance
+            Multilevel Inheritance
+            Multiple Inheritance
+            Hierarchical Inheritance
+            Hybrid Inheritance
+            Difference between “is-a” and “has-a” relationship
+    Polymorphism    [Day 21]
+        Learning Outcomes:
+            Explain polymorphism with the example of method overloading
+            Identify the need of static data and methods and code them
+            Identify the need of final data members, final methods and final parameters and code them
+            Identify the need of arrays as properties of a class and code them
+            Explain polymorphism with the example of method overriding
+            Explain early binding (compile time polymorphism) and late/dynamic binding (runtime polymorphism) with method overloading and method overriding
+            Identify the need of interfaces and write code
+            Explain how runtime polymorphism is achieved with the help of abstract classes and interfaces
+            Identify the need for multiple inheritance of interfaces and write code
+        Topics:
+            Polymorphism and its advantages
+            Types of Polymorphism
+            Types of Binding
+            Method Overloading and its uses.
+            Conditions of Overloading
+            Method Overriding
+            Scenario of Overriding
+            Difference between Overloading and Overriding
+
+    Operator Overloading    [Day 22]
+        Learning Outcomes:
+            Able to explain the need for Operator Overloading and write code for Operator Overloading as  Member Functions and Non-member Functions
+            Able to perform Operator Overloading the Stream Insertion Operator
+        Topics:
+            Introduction to Operator overloading
+            Overloading the Assignment Operator 
+            Overloading the Assignment Operator 
+            Overloading Operators as Member Functions
+            Overloading Operators as Global Functions
+            Overloading the Stream Insertion and Extraction Operators
+
+    Abstract Class          [Day 23]
+        Learning Outcomes:
+            Able to define a pure virtual function and an abstract class
+            Able to explain the uses of abstract classes
+            Identify the need of pure virtual functions and code them
+            Able to explain how runtime polymorphism is achieved with the help of abstract classes
+        Topics:
+            Virtual Functions
+            Pure Virtual functions
+            Abstract Class
+    Exception Handling      [Day 24]
+        Learning Outcomes:
+            Identify the probable exceptions and write necessary code to handle them to avoid the program from crashing
+            Identify the need of user defined exceptions, create them and throw them
+        Topics:
+            Exceptions
+            Handling exceptions using “try-catch”
+            Multiple catch blocks
+            The catch block to catch all exceptions
+            Custom Exception
+            Throwing an exception
+
+Compiling C Code Within C++ [Day 24]
+    Learning Outcomes:
+        Understand the difference between C and C++.
+        Be able to compile C code within C++.
+        Understand the use of the extern "C" keyword.
+        Understand the role of the C++ preprocessor.
+        Understand the role of the C++ linker.
+    Topics:
+        What is the difference between C and C++?
+        How to compile C code within C++?
+        The extern "C" keyword
+        The C++ preprocessor
+        The C++ linker
+
+
+Standard Template Library (STL) [Day 25..27]
+    Learning Outcomes:
+        For a given requirement, able to create a Generic Array Template Class
+        Able to explain and write program for Sequence Containers (Array, Vector, Deque) 
+    Topics:
+        Overview of Templates
+            Templates
+            Overloading functions
+            Template functions
+            Specializing a template function
+            Disambiguation under specialization
+            Template classes
+            An array template class
+            Instantiating a template class object
+            Rules for templates
+            Non member function with a template argument
+            Friends of template classes
+            Templates with multiple type parameters
+            Non type parameters for template classes
+        Overview of Standard Template Library
+            Perspective
+            History and evolution
+            New features in C++
+            The Standard Template Library
+            Design goals
+            Header files
+            STL components
+            Containers
+            Iterators
+
+Advanced C++ (C++11, C++14, C++17, C++20) Features and Concepts [Day 28..29]
+    Learning Outcomes
+        Understand and apply advanced features introduced in C++11, C++14, C++17, and C++20.
+        Write modern and efficient C++ code using these features.
+    Topics
+        C++11 Features
+            Smart pointers
+            Lambda expressions
+            Move semantics
+            Concurrency features
+        C++14 Enhancements
+            Binary literals
+            Generic lambdas
+            std::make_unique
+        C++17 Features
+            std::optional
+            std::variant
+            Structured bindings
+            Parallel algorithms
+        C++20 Features
+            Concepts and constraints
+            Ranges
+            Coroutines
+            Modules
+            Practical Applications
+        Code examples for each featureHands-on exercises and projects
+
+=====================================Phase 2===============================================
+Multi-threading in C++ [Day 31..33]
+    Learning Outcomes:
+        Understand the basics of multi-threading and its importance.
+        Create and manage threads using the C++ Standard Library.
+        Use synchronization mechanisms to handle shared data safely.
+        Identify and resolve common concurrency issues like deadlocks and race conditions.
+        Utilize thread communication techniques for efficient data exchange between threads.
+        Apply multi-threading to optimize performance in real-world applications.
+    Topics:
+        Introduction to Multi-threading
+            Learning Outcome: Understand the basics of multi-threading and its importance.
+            Topics:
+                Definition and benefits of multi-threading
+                Multi-threading vs. multi-processing
+                Use cases and applications of multi-threading
+        Creating and Managing Threads
+            Learning Outcome: Create and manage threads using the C++ Standard Library.
+            Topics:
+                C++11 thread class
+                Launching and joining threads
+                Detaching threads
+                Thread lifecycle
+        Thread Synchronization
+            Learning Outcome: Use synchronization mechanisms to handle shared data safely.
+            Topics:
+                Mutexes: std::mutex, std::lock_guard, std::unique_lock
+                Deadlock prevention
+                Condition variables: std::condition_variable
+        Advanced Thread Synchronization
+            Learning Outcome: Identify and resolve common concurrency issues like deadlocks and race conditions.
+            Topics:
+                Reader-Writer Locks: std::shared_mutex
+                Atomic Operations: std::atomic
+                Memory Order and Barriers
+        Thread Communication
+            Learning Outcome: Utilize thread communication techniques for efficient data exchange between threads.
+            Topics:
+                Message Passing
+                Futures and Promises: std::future, std::promise
+                Task-based Parallelism: std::async
+        Concurrency Patterns and Best Practices
+            Learning Outcome: Apply multi-threading to optimize performance in real-world applications.
+            Topics:
+                Producer-Consumer Pattern
+                Thread Pools
+                Parallel Algorithms in C++17 and C++20
+                Performance considerations and debugging tools
+        Case Studies and Practical Applications
+            Learning Outcome: Apply learned concepts to real-world scenarios.
+            Topics:
+                Practical examples of multi-threading in applications
+                Case studies of successful multi-threaded programs
+                Hands-on projects and exercises
+
+Inter-Process Communication (IPC) [Day 34..36]
+    Learning Outcomes
+        Understand the basics and importance of IPC.
+        Use various IPC mechanisms in C++.
+        Apply IPC techniques to enable communication between processes.
+    Topics
+        Introduction to IPC
+            Definition and importance of IPC
+            Common use cases of IPC
+        IPC Mechanisms
+            Pipes
+            Message Queues
+            Shared Memory
+            Sockets
+        Synchronization in IPC
+            Semaphores
+            Mutexes in IPC
+        Practical Applications of IPC
+            Real-world examples and case studies
+            Hands-on exercises
+
+
+Writing Makefiles and CMakefiles    [Day 31..33]
+    Learning Outcomes
+        Understand the basics of Makefiles and CMakefiles.
+        Write and manage Makefiles for small to medium-sized projects.
+        Use CMake to manage project builds efficiently.
+    Topics
+        Introduction to Build Systems
+            Importance of build systems
+            Overview of Make and CMake
+        Writing Makefiles
+            Basic syntax and structure of Makefiles
+            Variables, rules, and targets
+            Pattern rules and automatic variables
+        Introduction to CMake
+            CMakeLists.txt structure
+            Basic commands and syntax
+            Configuring and generating build files
+        Advanced CMake
+            Handling dependencies
+            Creating and using CMake modules
+            Cross-platform builds
+        Practical Examples
+            Writing Makefiles for sample projects
+            Using CMake for complex project structures
+
+
+Unit Testing Framework - GTest
+    Learning Outcomes
+        Understand the basics of unit testing and its importance.
+        Use Google Test (GTest) framework for writing and running unit tests.
+        Apply best practices for unit testing in C++.
+    Topics
+        Introduction to Unit Testing
+            Definition and importance of unit testing
+            Overview of different unit testing frameworks
+        Getting Started with GTest
+            Installation and setup
+            Writing basic tests
+            Running tests and interpreting results
+        Advanced GTest Features
+            Test fixtures
+            Parameterized tests
+            Mocking with Google Mock
+        Best Practices
+            Writing effective tests
+            Test-driven development (TDD)
+            Maintaining and organizing test suites
+        Practical Examples
+            Unit testing sample projects
+            Hands-on exercises
+
+Design Patterns
+    Learning Outcomes
+        Understand common design patterns and their importance.
+        Apply design patterns to solve common software design problems.
+        Recognize and use appropriate design patterns in their own projects.
+    Topics
+        Introduction to Design Patterns
+            Definition and importance of design patterns
+            Categories of design patterns
+        Creational Patterns
+            Singleton
+            Factory Method
+            Abstract Factory
+            Builder
+            Prototype
+        Structural Patterns
+            Adapter
+            Bridge
+            Composite
+            Decorator
+            Facade
+            Flyweight
+            Proxy
+        Behavioral Patterns
+            Chain of Responsibility
+            Command
+            Iterator
+            Mediator
+            Memento
+            Observer
+            State
+            Strategy
+            Template Method
+            Visitor
+        Applying Design Patterns
+            Recognizing when to use a particular pattern
+            Combining patterns
+            Real-world examples and case studies
+            Hands-on projects and exercises
+
+Debugging Concepts
+    Learning Outcomes:
+        Understand the concept of debugging and debugging process.
+        Be able to use the different types of debugging tools(gdb).
+        Be able to debug code in Linux OS..
+    Topics:
+        What is debugging?
+        The different types of debugging tools
+        The debugging process
+        Debugging in Linux OS
+
+Static Analysis to Identify Code Issues Using SONAR and Other Tools
+    Learning Outcomes:
+        Understand the concept of static analysis.
+        Be able to use  SONAR to identify code issues.
+        Be aware of other static analysis tools.
+        Be aware of static analysis in Linux OS. 
+    Topics:
+        A program with code issues that can be identified by SONAR.
+        The output of SONAR on a program with code issues.
+        A different static analysis tool and its output.
