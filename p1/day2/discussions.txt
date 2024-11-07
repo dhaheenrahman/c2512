@@ -3,12 +3,10 @@ psuedo code to check whether a number is armstrong or not:
   pseudofunction:
     function NumOfDigits(number)
       set count = 0
-      while number > 0
-        temp = number % 10
-        if temp > 0
-          count++
-        end if
-        number = number / 10
+      set copy = number
+      while copy > 0
+        copy = copy / 10
+        count ++
       end while
       return count
     
