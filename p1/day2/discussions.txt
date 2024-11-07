@@ -35,7 +35,36 @@ psuedo code to check whether a number is armstrong or not (Personal task):
 
 TeamWork:
 
-1. To find the square:-
+1. to find average of two numbers.  [Sana] 
+2. to find cube of number. [Sana]
+3. to find square of the number. [Josh]
+4. swap two numbers. [Josh]
+5. to check nubmer is divisible by 3. [Abel] 
+6. number divisible by 27.  [Abel]
+7. to print N natural numbers. [Sana]
+8. to check a number palindrome. [Sana] 
+9. to check a number amstrong.  [Josh]
+10. to check a number prime. [Josh]
+11. to check a number perfect number. [Abel]
+12. to check number is odd or even. [Abel]
+13. to check a year leap. [Sana]
+14. to check a number perfect square or not. [Sana]  
+15. Reverse the number.  [Josh]
+16. Factorials of the number. [Josh]
+17. Fibonacci. [Abel]
+18. to print prime numbers between in the limit. [Abel]  
+19. to find an element from the array. [Sana]
+20. to find the largest number from array. [Josh] 
+21. to sort the elements in the array. [Abel]
+22. to find sum of n numbers. [Sana]
+23. to display the duplicate numbers in the array. [Josh]
+24. to check string anagram. [Abel]
+25. to find length of the string.  [Sana]
+26. to delete duplicates strings in sting list. [Josh] 
+27. to count vowels in a string.  [Abel]
+28. to count whitespaces in a sentence.  
+
+3. To find the square:-
 
 pseudofunction:
 
@@ -51,7 +80,7 @@ pseudocode:
 
 findSquareTest()
 
-2. To swap two numbers:-
+4. To swap two numbers:-
 pseudofunction:
 function swapNums(&number1,&number2)
 	temp = number1
@@ -66,7 +95,7 @@ function swapNumsTest()
 pseudocode:
 swapNumsTest()
 
-3. To check whether a number is armstrong or not
+9. To check whether a number is armstrong or not
 pseudo function:
 
 function isArmstrong(number -> int) -> bool
