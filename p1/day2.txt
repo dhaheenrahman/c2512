@@ -1,0 +1,36 @@
+psuedo code to check whether a number is armstrong or not:
+
+  pseudofunction:
+    function NumOfDigits(number)
+      set count = 0
+      while number > 0
+        temp = number % 10
+        if temp > 0
+          count++
+        end if
+        number = number / 10
+      end while
+      return count
+    
+    function ArmstrongOrNot(number)
+      set sum = 0
+      set copy = num
+      pow = NumOfDigits(number)
+      while copy > 0
+        temp = copy % 10
+        sum = sum + temp^pow
+        copy = copy / 10
+      end while
+      if sum == number
+        return true
+      else
+        return false
+      end if
+
+    pseudocode:
+      input number
+      if ArmstrongOrNot(number) == true
+        print "Armstrong"
+      else
+        print "Not Armstrong"
+      end if
