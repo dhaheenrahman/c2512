@@ -1,4 +1,4 @@
-psuedo code to check whether a number is armstrong or not:
+psuedo code to check whether a number is armstrong or not (Personal task):
 
   pseudofunction:
     function NumOfDigits(number)
@@ -34,6 +34,7 @@ psuedo code to check whether a number is armstrong or not:
       end if
 
 TeamWork:
+
 1. To find the square:-
 
 pseudofunction:
