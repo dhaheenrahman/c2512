@@ -33,6 +33,31 @@ psuedo code to check whether a number is armstrong or not (Personal task):
         print "Not Armstrong"
       end if
 
+// pseudocode to find isPrime
+
+pseudofunction:
+
+function isPrime(number -> int) -> bool
+	if number < 2 then
+		return false
+	end if
+	for i in 2..sqrt(number)
+		if number % i == 0
+			return false
+		end if
+	end for
+	return true
+
+function isPrimeTest()
+	input num
+	int result = isPrime(num)
+	if result == true
+		print "Prime"
+	else
+		print "Not prime"
+	end if
+	
+
 TeamWork:
 
 1. to find average of two numbers.  [Sana] 
