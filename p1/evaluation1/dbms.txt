@@ -1,11 +1,3 @@
-(2) Case Study on SQL and DBMS : 
-    Train Reservation System - 
-    Arrive the UNF table and NFs tables and 
-    create table script, insert 
-    statements script and script 
-    for various queries (/evalation1/dbms.txt)
-
-  
 -- Train Reservation System
 
 --Tables:

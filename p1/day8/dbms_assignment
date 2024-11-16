@@ -1,0 +1,110 @@
+
+I have UNF table 
+    railway_booking 
+        booking_id, booking_number, train_id, train_name, 
+        passenger_id, passenger_name, passenger_city, 
+        journey_date, from_station, to_station, 
+        number_of_tickets, tickets_amount,
+        ticket_plus_food_amount, payment_mode, 
+
+        ticket1seat_number, ticket1_seat_price, 
+        ticket2seat_number, ticket2_seat_price, 
+        ticket3seat_number, ticket3_seat_price,
+        
+        food1_item_id, food1_item_name, food1_price, food1_qty, food1_amount,
+        food2_item_id, food2_item_name, food2_price, food2_qty, food2_amount,
+        food3_item_id, food3_item_name, food3_price, food1_qty, food3_amount,
+        food4_item_id, food4_item_name, food4_price, food1_qty, food4_amount, 
+I formed below NF tables.
+        passenger: passenger_id, passenger_name, passenger_city 
+        train: train_id, train_name
+        seat: seat_id, seat_number, seat_price
+        food: item_id, item_name, price
+
+        booking: booking_id, booking_number, 
+            journey_date, from_station, to_station, number_of_tickets, 
+            tickets_amount, food_amount, ticket_plus_food_amount, payment_mode,
+            passenger_id
+        booking_food: item_id, item_name, price, quantity, amount, booking_id
+        booking_ticket: ticket_id, seat_id, price, booking_id  
+        
+My data is going to be.
+        I am Maheswaran, and I have booked tickets for my family living in city Trichy. 
+            journey_date: 2024-11-20, from_station: Trichy, to_station: Chennai, 
+            train_name: express train, number_of_tickets: 3, 
+            seat_numbers: [S1, S2, S3] each seat price is Rs.120.
+            food ordered: [samosa @ Rs.60 x 2, pop corn @ Rs.100 x 3, coffee @ Rs.40 x 1, pups @ Rs.50 x 3]
+        And 
+        I have booked tickets for my family, sister’s family, and father.
+            journey_date: 2024-11-21, from_station: Trichy, to_station: Madurai, 
+            train_name: fast train, number_of_tickets: 7,
+            seat_numbers: [A1, A2, A3, A4, A5, A6, A7] each seat price is Rs.180.
+            food ordered: [samosa @ Rs.60 x 2, pop corn @ Rs.100 x 3, coffee @ Rs.40 x 1, pups @ Rs.50 x 3]
+
+Now, I need the tables script in oracle with primary key, not null, and foreign keys.
+And I need insert statements for the tables. 
+And I need the data in tabular form for all NF tables.
+
+=========================================================================
+
+
+UNF:
+    tickets(
+        booking_id, booking_number, theatre_id, theatre_name,
+        customer_id, customer_name, customer_city,
+        movie_name, about_movie, number_of_tickets, tickets_amount,  food_amount, 
+        ticket_plus_food_amount, payment_mode, 
+
+        ticket1seat_number, ticket1_seat_price, 
+        ticket2seat_number, ticket2_seat_price, 
+        ticket3seat_number, ticket3_seat_price,
+        
+        food1_item_id, food1_item_name, food1_price, food1_qty, food1_amount,
+        food2_item_id, food2_item_name, food2_price, food2_qty, food2_amount,
+        food3_item_id, food3_item_name, food3_price, food1_qty, food3_amount,
+        food4_item_id, food4_item_name, food4_price, food1_qty, food4_amount
+    )
+        
+
+1NF:
+    tickets(
+        booking_id, booking_number, theatre_id, theatre_name,
+        customer_id, customer_name, customer_city,
+        movie_name, about_movie, number_of_tickets, tickets_amount,  food_amount, 
+        ticket_plus_food_amount, payment_mode, 
+        seat_number, seat_price, 
+        food_item_id, food_item_name, food_price, food_qty
+    )   PK {booking_id, seat_number, food_item_id}
+            
+    
+2NF:
+    tickets(
+        booking_id, booking_number, theatre_id, 
+        customer_id,
+        movie_name, about_movie, number_of_tickets, tickets_amount,  food_amount, 
+        ticket_plus_food_amount, payment_mode, 
+        seat_number, 
+        food_item_id, food_qty
+    )   PK {booking_id, seat_number, food_item_id} 
+        FK{food_item_id} FK{seat_number} FK{customer_id}
+
+    foods(
+        item_id, item_name, price
+    )
+
+    seats(
+        seat_id, seat_number, seat_price
+    )
+
+    customers(
+        customer_id, customer_name, customer_city,
+    )
+
+    theatres (
+        theatre_id, theatre_name
+    )
+       
+       // To be continued :(
+
+
+
