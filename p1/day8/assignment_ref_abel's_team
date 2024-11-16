@@ -1,0 +1,431 @@
+I have an UNF table
+tickets
+booking_id, booking_number, airline_id, airline_name,
+customer_id, customer_name, customer_city,
+flight_number, flight_date, departure_time, arrival_time,
+departure_city, arrival_city, ticket_price, seat_class,
+seat1_number, seat1_price,
+seat2_number, seat2_price,
+seat3_number, seat3_price,
+meal1_item_id, meal1_item_name, meal1_price, meal1_qty, meal1_amount,
+meal2_item_id, meal2_item_name, meal2_price, meal2_qty, meal2_amount,
+meal3_item_id, meal3_item_name, meal3_price, meal3_qty, meal3_amount
+
+I formed the below NF tables:
+customer: customer_id, customer_name, customer_city
+airline: airline_id, airline_name
+seat: seat_id, seat_number, seat_price
+meal: meal_id, meal_name, price
+
+booking: booking_id, booking_number, flight_number, flight_date,  
+    departure_time, arrival_time, departure_city, arrival_city,  
+    ticket_price, seat_class, customer_id, airline_id  
+booking_meal: meal_id, meal_name, price, quantity, amount, booking_id  
+booking_seat: seat_id, seat_number, price, booking_id  
+
+My data is going to be:
+I am Aravind, and I have booked tickets for my family from Chennai to Delhi on flight AI102 operated by Air India.
+flight_date: 2024-11-20, departure_time: 10:00 AM, arrival_time: 1:00 PM
+seat_class: economy
+seat_numbers: [12A, 12B, 12C], each seat price is Rs.5000
+meals ordered: [Veg Meal @ Rs.300 x 2, Chicken Meal @ Rs.500 x 1, Coffee @ Rs.100 x 3]
+And
+I have booked tickets for my parents from Bangalore to Mumbai on flight SG345 operated by SpiceJet.
+flight_date: 2024-11-22, departure_time: 5:00 PM, arrival_time: 7:00 PM
+seat_class: business
+seat_numbers: [1A, 1B], each seat price is Rs.8000
+meals ordered: [Veg Meal @ Rs.300 x 1, Chicken Meal @ Rs.500 x 2]
+
+Now, I need the table scripts in Oracle with primary keys, not null, and foreign keys.
+I also need insert statements for the tables.
+And I need the data in tabular form for all NF tables.
+
+----------------solution--------------------------------
+
+
+-- Customer Table
+CREATE TABLE customer (
+    customer_id NUMBER PRIMARY KEY,
+    customer_name VARCHAR2(100) NOT NULL,
+    customer_city VARCHAR2(100) NOT NULL
+);
+
+-- Airline Table
+CREATE TABLE airline (
+    airline_id NUMBER PRIMARY KEY,
+    airline_name VARCHAR2(100) NOT NULL
+);
+
+-- Seat Table
+CREATE TABLE seat (
+    seat_id NUMBER PRIMARY KEY,
+    seat_number VARCHAR2(10) NOT NULL,
+    seat_price NUMBER NOT NULL
+);
+
+-- Meal Table
+CREATE TABLE meal (
+    meal_id NUMBER PRIMARY KEY,
+    meal_name VARCHAR2(100) NOT NULL,
+    price NUMBER NOT NULL
+);
+
+-- Booking Table
+CREATE TABLE booking (
+    booking_id NUMBER PRIMARY KEY,
+    booking_number VARCHAR2(50) NOT NULL,
+    flight_number VARCHAR2(50) NOT NULL,
+    flight_date DATE NOT NULL,
+    departure_time VARCHAR2(20) NOT NULL,
+    arrival_time VARCHAR2(20) NOT NULL,
+    departure_city VARCHAR2(100) NOT NULL,
+    arrival_city VARCHAR2(100) NOT NULL,
+    ticket_price NUMBER NOT NULL,
+    seat_class VARCHAR2(20) NOT NULL,
+    customer_id NUMBER NOT NULL,
+    airline_id NUMBER NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (airline_id) REFERENCES airline(airline_id)
+);
+
+-- Booking Seat Table
+CREATE TABLE booking_seat (
+    seat_id NUMBER,
+    seat_number VARCHAR2(10) NOT NULL,
+    price NUMBER NOT NULL,
+    booking_id NUMBER NOT NULL,
+    PRIMARY KEY (seat_id, booking_id),
+    FOREIGN KEY (seat_id) REFERENCES seat(seat_id),
+    FOREIGN KEY (booking_id) REFERENCES booking(booking_id)
+);
+
+-- Booking Meal Table
+CREATE TABLE booking_meal (
+    meal_id NUMBER,
+    meal_name VARCHAR2(100) NOT NULL,
+    price NUMBER NOT NULL,
+    quantity NUMBER NOT NULL,
+    amount NUMBER NOT NULL,
+    booking_id NUMBER NOT NULL,
+    PRIMARY KEY (meal_id, booking_id),
+    FOREIGN KEY (meal_id) REFERENCES meal(meal_id),
+    FOREIGN KEY (booking_id) REFERENCES booking(booking_id)
+);
+
+
+Insert into customer
+
+INSERT INTO customer VALUES (1, 'Aravind', 'Chennai');
+INSERT INTO customer VALUES (2, 'Aravind', 'Bangalore');
+
+Insert into airline
+
+INSERT INTO airline VALUES (1, 'Air India');
+INSERT INTO airline VALUES (2, 'SpiceJet');
+
+Insert into seat
+
+INSERT INTO seat VALUES (1, '12A', 5000);
+INSERT INTO seat VALUES (2, '12B', 5000);
+INSERT INTO seat VALUES (3, '12C', 5000);
+INSERT INTO seat VALUES (4, '1A', 8000);
+INSERT INTO seat VALUES (5, '1B', 8000);
+
+Insert into meal
+
+INSERT INTO meal VALUES (1, 'Veg Meal', 300);
+INSERT INTO meal VALUES (2, 'Chicken Meal', 500);
+INSERT INTO meal VALUES (3, 'Coffee', 100);
+
+Insert into booking
+
+INSERT INTO booking VALUES (1, 'B001', 'AI102', TO_DATE('2024-11-20', 'YYYY-MM-DD'), 
+    '10:00 AM', '1:00 PM', 'Chennai', 'Delhi', 15000, 'Economy', 1, 1);
+INSERT INTO booking VALUES (2, 'B002', 'SG345', TO_DATE('2024-11-22', 'YYYY-MM-DD'), 
+    '5:00 PM', '7:00 PM', 'Bangalore', 'Mumbai', 16000, 'Business', 2, 2);
+
+Insert into booking_seat
+
+INSERT INTO booking_seat VALUES (1, '12A', 5000, 1);
+INSERT INTO booking_seat VALUES (2, '12B', 5000, 1);
+INSERT INTO booking_seat VALUES (3, '12C', 5000, 1);
+INSERT INTO booking_seat VALUES (4, '1A', 8000, 2);
+INSERT INTO booking_seat VALUES (5, '1B', 8000, 2);
+
+Insert into booking_meal
+
+INSERT INTO booking_meal VALUES (1, 'Veg Meal', 300, 2, 600, 1);
+INSERT INTO booking_meal VALUES (2, 'Chicken Meal', 500, 1, 500, 1);
+INSERT INTO booking_meal VALUES (3, 'Coffee', 100, 3, 300, 1);
+
+INSERT INTO booking_meal VALUES (1, 'Veg Meal', 300, 1, 300, 2);
+INSERT INTO booking_meal VALUES (2, 'Chicken Meal', 500, 2, 1000, 2);
+
+
+Tabular Data Representation
+
+Customer Table
+
+customer_id	customer_name	customer_city
+1	Aravind	Chennai
+2	Aravind	Bangalore
+
+Airline Table
+
+airline_id	airline_name
+1	Air India
+2	SpiceJet
+
+Seat Table
+
+seat_id	seat_number	seat_price
+1	12A	5000
+2	12B	5000
+3	12C	5000
+4	1A	8000
+5	1B	8000
+
+Meal Table
+
+meal_id	meal_name	price
+1	Veg Meal	300
+2	Chicken Meal	500
+3	Coffee	100
+
+Booking Table
+
+booking_id	booking_number	flight_number	flight_date	departure_time	arrival_time	departure_city	arrival_city	ticket_price	seat_class	customer_id	airline_id
+1	B001	AI102	2024-11-20	10:00 AM	1:00 PM	Chennai	Delhi	15000	Economy	1	1
+2	B002	SG345	2024-11-22	5:00 PM	7:00 PM	Bangalore	Mumbai	16000	Business	2	2
+
+Booking Seat Table
+
+seat_id	seat_number	price	booking_id
+1	12A	5000	1
+2	12B	5000	1
+3	12C	5000	1
+4	1A	8000	2
+5	1B	8000	2
+
+Booking Meal Table
+
+meal_id	meal_name	price	quantity	amount	booking_id
+1	Veg Meal	300	2	600	1
+2	Chicken Meal	500	1	500	1
+3	Coffee	100	3	300	1
+1	Veg Meal	300	1	300	2
+2	Chicken Meal	500	2	1000	2
+
+--------------------------------------------------------------------------------------------
+
+"I have booked tickets using my Aadhaar ID.
+
+    I watched Flight AI102 on 20-Nov-2024 at 10:00 AM.
+    I watched Flight SG345 on 22-Nov-2024 at 5:00 PM.
+
+--------------------------------------------------------------------------------------------
+
+Step 1: Alter Table Script
+
+
+
+ALTER TABLE booking 
+ADD (
+    show_date_time DATE NOT NULL, 
+    aadhaar_id VARCHAR2(12) NOT NULL
+);
+
+    The show_date_time column is of type DATE to store the date and time of the show.
+    The aadhaar_id column is of type VARCHAR2(12) assuming Aadhaar ID is a 12-digit string.
+
+
+
+Step 2: Update Script
+
+
+
+
+UPDATE booking
+
+SET show_date_time = TO_DATE('20-Nov-2024 10:00 AM', 'DD-Mon-YYYY HH:MI AM'),
+    aadhaar_id = '123456789012'
+WHERE booking_id = 1;  -- Assuming booking_id = 1 for Flight AI102
+
+
+UPDATE booking
+SET show_date_time = TO_DATE('22-Nov-2024 05:00 PM', 'DD-Mon-YYYY HH:MI PM'),
+    aadhaar_id = '123456789012'
+WHERE booking_id = 2;  -- Assuming booking_id = 2 for Flight SG345
+
+  
+    The TO_DATE function is used to convert the date and time string into the DATE format.
+    Replace booking_id = 1 and booking_id = 2 with the actual booking_id values in your table.
+
+Example of Updated booking Table Data
+
+booking_id	booking_number	movie_name	about_movie	show_date_time	aadhaar_id	number_of_tickets	tickets_amount	food_amount	ticket_plus_food_amount	payment_mode	customer_id
+1	A102	Flight AI102	Rajnikanth acting	20-Nov-2024 10:00 AM	123456789012	3	360	300	660	Credit Card	101
+2	SG345	Flight SG345	Siva Karthikeyan acting	22-Nov-2024 05:00 PM	123456789012	7	1260	700	1960	Debit Card	102
+
+
+
+
+
+"I have booked tickets for my family. Only 3 tickets for Rubber Ball movie at Star Theatre. [Use the ticket numbers and price from the ticket table].
+
+I also bought two samosas and three pop korn.
+
+Please book this ticket as a single transaction in Oracle with exception handling.
+
+    If data is readable from the master table, read and use it.
+    If data is computable, compute and update the table during the transaction."
+
+
+
+
+
+Step 1: Set Up Master Tables
+
+
+CREATE TABLE ticket (
+    ticket_id NUMBER PRIMARY KEY,
+    seat_number VARCHAR2(10),
+    seat_price NUMBER
+);
+
+food Table
+
+CREATE TABLE food (
+    item_id NUMBER PRIMARY KEY,
+    item_name VARCHAR2(50),
+    price NUMBER
+);
+
+booking Table
+
+CREATE TABLE booking (
+    booking_id NUMBER PRIMARY KEY,
+    movie_name VARCHAR2(50),
+    theatre_name VARCHAR2(50),
+    number_of_tickets NUMBER,
+    total_ticket_amount NUMBER,
+    total_food_amount NUMBER,
+    total_amount NUMBER,
+    customer_id NUMBER
+);
+
+booking_ticket Table
+
+CREATE TABLE booking_ticket (
+    booking_ticket_id NUMBER PRIMARY KEY,
+    booking_id NUMBER,
+    ticket_id NUMBER,
+    seat_number VARCHAR2(10),
+    seat_price NUMBER,
+    FOREIGN KEY (booking_id) REFERENCES booking(booking_id),
+    FOREIGN KEY (ticket_id) REFERENCES ticket(ticket_id)
+);
+
+booking_food Table
+
+CREATE TABLE booking_food (
+    booking_food_id NUMBER PRIMARY KEY,
+    booking_id NUMBER,
+    food_item_id NUMBER,
+    quantity NUMBER,
+    food_price NUMBER,
+    total_amount NUMBER,
+    FOREIGN KEY (booking_id) REFERENCES booking(booking_id),
+    FOREIGN KEY (food_item_id) REFERENCES food(item_id)
+);
+
+Step 2: Booking Transaction with Exception Handling
+
+
+DECLARE
+    -- Declare variables for ticket and food data
+    v_booking_id NUMBER;
+    v_ticket_price NUMBER;
+    v_seat_number VARCHAR2(10);
+    v_food_price NUMBER;
+    v_total_ticket_amount NUMBER := 0;
+    v_total_food_amount NUMBER := 0;
+    v_total_amount NUMBER := 0;
+    v_ticket_count NUMBER := 3; -- Number of tickets booked
+    v_food_count NUMBER := 5; -- 2 samosas, 3 pop korn
+    v_error_code EXCEPTION;
+
+
+BEGIN
+    -- Start the transaction
+    SAVEPOINT booking_start;
+    
+    -- Insert booking record (movie name, theatre, and customer details)
+    INSERT INTO booking (booking_id, movie_name, theatre_name, number_of_tickets)
+    VALUES (booking_seq.NEXTVAL, 'Rubber Ball', 'Star Theatre', v_ticket_count)
+    RETURNING booking_id INTO v_booking_id;
+
+    -- Fetch ticket price and seat details from the ticket table for 3 tickets
+    FOR i IN 1..v_ticket_count LOOP
+        SELECT seat_price, seat_number INTO v_ticket_price, v_seat_number
+        FROM ticket
+        WHERE ROWNUM = 1; -- Assuming we are selecting the first available ticket
+
+        -- Insert ticket data into the booking_ticket table
+        INSERT INTO booking_ticket (booking_ticket_id, booking_id, ticket_id, seat_number, seat_price)
+        VALUES (booking_ticket_seq.NEXTVAL, v_booking_id, i, v_seat_number, v_ticket_price);
+        
+        -- Accumulate ticket amount
+        v_total_ticket_amount := v_total_ticket_amount + v_ticket_price;
+    END LOOP;
+
+    -- Insert food items
+    -- Assuming two samosas (item_id 1) and three pop korn (item_id 2)
+    -- Fetch food price from food master table
+
+    
+    FOR j IN 1..v_food_count LOOP
+        IF j <= 2 THEN
+            SELECT price INTO v_food_price FROM food WHERE item_id = 1; -- Samosa
+        ELSE
+            SELECT price INTO v_food_price FROM food WHERE item_id = 2; -- Pop Korn
+        END IF;
+        
+        -- Insert food item data into booking_food table
+        INSERT INTO booking_food (booking_food_id, booking_id, food_item_id, quantity, food_price, total_amount)
+        VALUES (booking_food_seq.NEXTVAL, v_booking_id, CASE WHEN j <= 2 THEN 1 ELSE 2 END, 1, v_food_price, v_food_price);
+        
+        -- Accumulate food amount
+        v_total_food_amount := v_total_food_amount + v_food_price;
+    END LOOP;
+
+    -- Compute the total amount
+    v_total_amount := v_total_ticket_amount + v_total_food_amount;
+
+    -- Update the booking record with total ticket amount, food amount, and total amount
+    UPDATE booking
+    SET total_ticket_amount = v_total_ticket_amount,
+        total_food_amount = v_total_food_amount,
+        total_amount = v_total_amount
+    WHERE booking_id = v_booking_id;
+
+    COMMIT;  -- Commit the transaction if everything is successful
+
+EXCEPTION
+    WHEN OTHERS THEN
+        -- Rollback to the savepoint in case of an error
+        ROLLBACK TO booking_start;
+        -- Handle the error (for example, logging the error or raising an exception)
+        DBMS_OUTPUT.PUT_LINE('Error occurred: ' || SQLERRM);
+        RAISE;  -- Re-raise the error to propagate it
+END;
+/
+
+
+
+Step 3: Sequence for Primary Key Generation
+
+
+CREATE SEQUENCE booking_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE booking_ticket_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE booking_food_seq START WITH 1 INCREMENT BY 1;
