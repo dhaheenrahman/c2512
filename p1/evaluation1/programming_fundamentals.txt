@@ -45,7 +45,7 @@
 
     pseudofunctions:
 
-    function findAverage(number1, number2) -> int
+    function findAverage(number1, number2) -> float
         average = (number1 + number2) / 2
             return average
 
@@ -64,37 +64,27 @@
 
     //C++ code
 
-    #include <iostream>
-    using std::cout;
-    using std::cin;
+    #include<iostream>
+using std::cin;
+using std::cout;
 
-    int findAverage(int number1,int number2)
-    {
-        int average;
-        
-        average = (number1 + number2)/ 2;
-        
-        return average;
-    }
+float findAverage(int number1,int number2){
+    float average = (float)(number1 + number2) / 2;
+    return average;
+}
 
-    void findAverageTest(void)
-    {
-        int number1, number2, result;
-        
-        cout << "Enter the numbers: ";
-        cin >> number1;
-        cin >> number2;
-        
-        result = findAverage(number1, number2);
-        cout << "The average is: " << result << endl;
-    }
+void findAverageTest(void){
+    int number1, number2;
+    cout << "Enter number 1: ";
+    cin >> number1;
+    cout << "Enter number 2: ";
+    cin >> number2;
+    cout << findAverage(number1, number2);
+}
 
-    int main()
-    {
-        findAverageTest(void);
-        
-        return 0;
-    }
+int main(void){
+    findAverageTest();
+}
 
 2. to find cube of number. [Sana]
 
