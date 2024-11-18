@@ -1993,10 +1993,10 @@ int main(void){
     
 
         function findAvg(ages-> [int], size-> int) -> int
+            sumAge = findSumOfAge(ages, size) 
+            avg = sumAge / size
 
-            int avg = findSumOfAge(ages, size)  //review
-
-            return ((int) avg / 2)
+            return avg
 
 
 
@@ -2183,7 +2183,7 @@ int main(void){
 
     int findAvg(int ages[], int size){ 
         int sumAge = findSumOfAge(ages, size);
-        int avg = (int)sumAge/size;
+        int avg = sumAge / size;
         
         return avg;
     }
