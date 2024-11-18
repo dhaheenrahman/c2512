@@ -1946,7 +1946,6 @@ int main(void){
         string sentence;
         cout << "Enter a sentence: ";
         getline(cin, sentence);
-
         int count = countWhitespaces(sentence);
 
         cout << "Number of whitespaces: " << count << endl;
@@ -1954,6 +1953,7 @@ int main(void){
 
     int main() {
         testCountWhitespaces();
+
         return 0;
     }
 
@@ -1977,7 +1977,6 @@ int main(void){
         #define MAX_SIZE 100
 
         function readAges(ages-> [int]) -> int
-
             int index = 0
             int age;
 
@@ -1988,7 +1987,6 @@ int main(void){
                 ages[index] = age
                 index = index + 1
                 input age
-
             end while
 
             return index
@@ -2041,7 +2039,6 @@ int main(void){
     _____________________________________________Bhagya_____________________________________________________
 
         function findSumOfPrime(ages-> [int], size-> int) -> int
-
             int sum = 0
 
             for i in (0..(size-1))
@@ -2054,16 +2051,13 @@ int main(void){
 
 
         function isTeenage(age-> int) -> bool
-
             if ((age >= 13) and (age <= 19))
                 true
             else
                 return false
             
 
-
         function findSumOfTeenage(ages -> [int], size -> int)
-
             int sum = 0
 
             for i in (0..(size-1))
@@ -2090,15 +2084,14 @@ int main(void){
 
 
         function isOddAge(age-> int) -> bool
-            
             if ((age % 2) == 0)          //review
                 return false
             end if
-            return true
-            
-        
-        function sumOdd(ages-> [int], size-> int) -> int
 
+            return true
+
+            
+        function sumOdd(ages-> [int], size-> int) -> int
             int sum = 0
 
             for i in (0..(size-1))
@@ -2132,6 +2125,8 @@ int main(void){
 
         function testFunction()
 
+            int ages[MAX_SIZE]
+            size = readAges(ages)
             primeAgeSum = findSumOfPrime(ages, size) 
             teenSum = findSumOfTeenage(ages, size)
             minimumAge = findMinAge(ages, size)
@@ -2143,6 +2138,8 @@ int main(void){
             print teenSum
             print minimumAge
             print oddAgeSum
+            print secondMaxAdultAge
+
             if(isPrime(minimumAge))
                 print("minimum age is prime")
             else
@@ -2160,13 +2157,16 @@ int main(void){
     int readAges(int ages[]){
         int index=0;
         int age;
+
         cout << "Enter ages:" << endl;
         cin >> age;
+
         while(age>0){
             ages[index]=age;
             index = index+1;
             cin >> age;
         }
+
         return index;
     }
 
@@ -2175,14 +2175,13 @@ int main(void){
 
             for (int i=0; i<size ;i++){
                 sum = sum + ages[i];
-                
             }
+
             return sum;
     }
 
 
     int findAvg(int ages[], int size){ 
-        
         int sumAge = findSumOfAge(ages, size);
         int avg = (int)sumAge/size;
         
@@ -2217,6 +2216,7 @@ int main(void){
                 sum = sum + ages[i];
             }
         }
+
         return sum;
     }
 
@@ -2232,6 +2232,7 @@ int main(void){
 
     int findSumOfTeenage(int ages[] , int size){
         int sumOfTeenage = 0;
+
         for(int i=0 ; i < size ; i++)
         {
             if(isTeenage(ages[i]))
@@ -2239,6 +2240,7 @@ int main(void){
                 sumOfTeenage = sumOfTeenage+ages[i];
             }
         }
+
         return sumOfTeenage;
     }
 
@@ -2254,7 +2256,6 @@ int main(void){
     }
 
     bool isOddAge(int age){
-            
         if ((age % 2) == 0){         
             return false;
         }
@@ -2326,7 +2327,6 @@ int main(void){
         }
         else{
             cout << "Minimum age is not prime" << endl;
-            
         }
     }
 
@@ -2334,6 +2334,7 @@ int main(void){
     int main()
     {   
         functionTest();
+
         return 0;
     }
 
@@ -2341,7 +2342,7 @@ int main(void){
     Part 2:
     Implement avg age and min age without using arrays.
 
-    function avgAgeAndMinAge(numAge -> int) -> void
+    function findAverageAndMinimumAge(numAge -> int) -> void
         minAge = INT_MAX
         totalAge = 0
 
@@ -2365,7 +2366,7 @@ int main(void){
         print "Minimum Age: " minAge
         print "Average Age: " avgAge
 
-    function avgAgeAndMinAgeTest() -> void
+    function findAverageAndMinimumAgeTest() -> void
         print "Enter the number of people:"
         input numAge
 
@@ -2374,10 +2375,10 @@ int main(void){
             return
         end if
 
-        call avgAgeAndMinAge(numAge)
+        call findAverageAndMinimumAge(numAge)
 
     pseudo code:
-        avgAgeAndMinAgeTest()
+        findAverageAndMinimumAgeTest()
 
 
 
@@ -2386,12 +2387,12 @@ int main(void){
     #include <climits>
     using namespace std;
 
-
-    void avgAgeAndMinAge(int numAge) {
+    void findAverageAndMinimumAge(int numAge) {
         int minAge = INT_MAX; 
         int totalAge = 0;    
 
         cout << "Enter the ages:" << endl;
+
         for (int i = 0; i < numAge; i++) {
             int age;
             cin >> age;
@@ -2405,16 +2406,17 @@ int main(void){
             }
         }
 
-        double avgAge = static_cast<double>(totalAge) / numAge;
+        int avgAge = (totalAge / numAge);
 
         cout << "Minimum Age: " << minAge << endl;
         cout << "Average Age: " << avgAge << endl;
     }
 
-    // Function to test avgAgeAndMinAge
-    void avgAgeAndMinAgeTest() {
-        cout << "Enter the number of people: ";
+    // Function to test findAverageAndMinimumAge
+    void findAverageAndMinimumAgeTest() {
         int numAge;
+
+        cout << "Enter the number of people: ";
         cin >> numAge;
 
         if (numAge <= 0) {
@@ -2422,11 +2424,12 @@ int main(void){
             return;
         }
 
-        avgAgeAndMinAge(numAge); 
+        findAverageAndMinimumAge(numAge); 
     }
 
     int main() {
-        avgAgeAndMinAgeTest(); 
+        findAverageAndMinimumAgeTest();
+
         return 0;
     }
 
