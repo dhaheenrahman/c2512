@@ -2072,7 +2072,7 @@ int main(void){
     ______________________________________________Nayana____________________________________________________
 
         function findMinAge(ages-> [int], size-> int) -> int
-            min = 0
+            min = INT_MAX
 
             for i in (0..(size-1))
                 if (ages[i] < min)
