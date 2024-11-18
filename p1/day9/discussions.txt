@@ -1,0 +1,7 @@
+- Oracle data format : 'YYYY-MM-DD'
+- Cascaded foreign key:
+    to reflect changes made in the current table to the reference table also.
+
+    Syntax:
+        REFERENCES (reference_table)
+        ON DELETE CASCADE
