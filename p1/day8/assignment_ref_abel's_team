@@ -4,9 +4,11 @@ booking_id, booking_number, airline_id, airline_name,
 customer_id, customer_name, customer_city,
 flight_number, flight_date, departure_time, arrival_time,
 departure_city, arrival_city, ticket_price, seat_class,
+
 seat1_number, seat1_price,
 seat2_number, seat2_price,
 seat3_number, seat3_price,
+
 meal1_item_id, meal1_item_name, meal1_price, meal1_qty, meal1_amount,
 meal2_item_id, meal2_item_name, meal2_price, meal2_qty, meal2_amount,
 meal3_item_id, meal3_item_name, meal3_price, meal3_qty, meal3_amount
