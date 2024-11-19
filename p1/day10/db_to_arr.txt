@@ -1,0 +1,86 @@
+/*
+Title: Railway Ticket Booking Management System
+
+The fields are:
+1. Booking ID -> bookingId[]
+2. Ticket Amount -> ticketAmounts[]
+3. Food Amount -> foodAmount[]
+
+Implement a counter to tract the number of customer booking 
+
+Max array size: 1000
+
+Operations required(menu-driven):
+    C-> Create
+    R-> Read
+    U-> Update
+    D-> Delete
+
+Create:
+When option 1 is given 
+add edit the 3 arrays
+ensure max limit is not exceeded
+
+Read: -> 
+Based on given input customerId
+
+Update:
+Based on given input customerId
+then edit all values
+implement left shift
+
+Delete:
+Based on given input customerId
+implement left shift
+
+counter=0
+bookingId[]
+
+
+Functions:
+
+
+
+ifExist(id,bookingId[]){                                            -> Bhagya
+    check if id in bookingId[]
+        return index
+    return -1
+}
+
+createBookingTicket(bookingId[],ticketAmounts[], foodAmount[]){     -> Dhaheen
+    enter bookingid
+    if ((isExist(id)!=-1))&&(counter<1000)
+        enter remaining fields
+    else not unique
+    increment counter
+
+    display appropriate message in each case
+}
+
+displayBooking(bookingId[],ticketAmounts[], foodAmount[]){          -> Pitchumani
+    print the arrays in a tabular form
+}
+
+editBooking(bookingId[],ticketAmounts[], foodAmount[]){             -> Nayana
+    enter id
+    if (isExist(id)!=-1){
+        edit the arrays except bookingId
+    }
+
+    display appropriate message in each case
+}
+
+deleteBooking(bookingId[],ticketAmounts[], foodAmount[]){           -> Josh
+    enter id
+    if (isExist(id)!=-1){
+        delete all records from [i]th index of all arrays
+        implement left shift
+        decrement counter
+    }
+
+    display appropriate message in each case
+}
+
+*/
+
+
