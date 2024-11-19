@@ -104,3 +104,4 @@ CREATE TABLE train_booking_seat (
         INSERT INTO train_booking_food VALUES (3, 3, 2, 200);
 
         COMMIT;
+    
