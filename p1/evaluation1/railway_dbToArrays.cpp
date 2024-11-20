@@ -115,6 +115,15 @@ int ifExist(int id, int bookingId[], int counter) {
  * @param foodAmount Array of food amounts.
  * @param bookingsCounter Current number of bookings.
  */
+/**
+ * @brief Creates a new booking.
+ * @param bookingId Array of booking IDs.
+ * @param ticketAmount Array of ticket amounts.
+ * @param foodAmount Array of food amounts.
+ * @param bookingsCounter Current number of bookings.
+ */
+
+
 void createBooking(int bookingId[], int ticketAmount[], int foodAmount[], int &bookingsCounter) {
     // Checking whether the booking limit is exceeeded
 	if (bookingsCounter >= MAX_SIZE) {                           
@@ -127,9 +136,15 @@ void createBooking(int bookingId[], int ticketAmount[], int foodAmount[], int &b
 	cout << "Enter Booking Id: ";
 	cin >> id;
     // Checking if the id is a positive value
-	if (id>0) {           
-        // Checking if the entered id is already existing                                      
-		if(ifExist(id, bookingId, bookingsCounter) == -1 ) {    
+	if (id <= 0) {           
+        		cout << "Enter valid Booking ID.";
+	}
+	else {
+		// Checking if the entered id is already existing                                      
+		if(ifExist(id, bookingId, bookingsCounter) != -1 ) {    
+			cout << "Booking Id already exists!";                         
+		}
+		else {
 			int amountOfTicket,amountOfFood;
 
             // Read the ticket amount and food amount once the id is validated
@@ -145,14 +160,8 @@ void createBooking(int bookingId[], int ticketAmount[], int foodAmount[], int &b
 
 			cout << "Booking added successfully..";            
 
-			bookingsCounter++ ;                                 
+			bookingsCounter++ ;     
 		}
-		else {
-			cout << "Booking Id already exists!";               
-		}
-	}
-	else {
-		cout << "Enter valid Booking ID.";
 	}
 
 	cout << "\n";
