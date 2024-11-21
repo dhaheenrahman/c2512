@@ -1,0 +1,24 @@
+body{
+    font-family: Verdana;;
+}
+
+table th{
+    background-color: antiquewhite;
+}
+
+label{
+    width: 100px;
+    display: inline-block;
+}
+
+form div{
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 10px;
+}
+
+input{
+    padding: 4px;
+}

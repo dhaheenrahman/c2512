@@ -1,0 +1,12 @@
+
+
+Concept of views in SQL:
+    The resultant table of a query can be stored with a name. This resultant table is called view.
+    
+    Usage:
+
+    CREATE VIEW employees_hr AS 
+    SELECT * FROM employess 
+    WHERE department = 'HR'
+
+    SELECT * from employees_hr;
