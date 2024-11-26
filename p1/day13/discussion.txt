@@ -1,0 +1,10 @@
+linux commands:
+
+pwd                   : print current directory
+ls                    : list files and folders in current directory
+cd <dir_name>         : To navigate to a directory
+cat <file_name>       : display content of a file
+nano <file_name>      : open & edit a file in nano editor
+<package> --version   : identify the version of installed package
+g++ <file_name.cpp>   : to compile a cpp program
+./<executable.out>    : to execute an executable
