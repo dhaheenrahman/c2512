@@ -1,0 +1,20 @@
+1. Create Rectangle class and its objects and display the area.
+
+2. Divide it into modules:
+    Rectangle:
+        Rectangle.h
+            "sed -n 4,14p rectangle.cpp> rectangle_modules/Rectangle.h"
+        Rectangle.cpp
+            "sed -n 25,36p rectangle.cpp> rectangle_modules/Rectangle.cpp"
+
+    Main:
+        Main.cpp
+
+3. Compile all source files to object files
+        "g++ -c *.cpp"
+
+4. Combine the object files to a single executable
+        "g++ -o App.out *.o"
+
+5. Execute
+        "./App.out"
