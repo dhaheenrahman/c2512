@@ -14,11 +14,12 @@ int main() {
     Vaccination v4("V004", 3);
 
     cout << boolalpha;
-    cout << "Equals: " << v1.Equals(v2) << endl;
-    cout << "Not Equals: " <<  v1.NotEquals(v2) << endl;
-    cout << "GreaterThan: " << v1.GreaterThan(v3) << endl;
-    cout << "LessThanEquals: " << v4.LessThanEquals(v1) << endl; 
-    cout << "Equals: " << v4.LessThanEquals(v2) << endl; 
+    cout << "Equals: " << Equals(v1,v2) << endl;
+    cout << "Not Equals: " <<  NotEquals(v1,v2) << endl;
+    cout << "GreaterThan: " << GreaterThan(v1,v3) << endl;
+    cout << "LessThanEquals: " << LessThanEquals(v4,v1) << endl;
+    cout << "Equals: " << LessThanEquals(v4,v2) << endl;
 
     return 0;
 }
+
