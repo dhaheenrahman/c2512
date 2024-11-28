@@ -5,34 +5,34 @@
 using std::string;
 
 //behaviours
-bool HospitalStay::Equals(const HospitalStay& other)
+bool Equals(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays == other.NumberOfDays);
+    return (first.NumberOfDays == second.NumberOfDays);
 }
 
-bool HospitalStay::NotEquals(const HospitalStay& other)
+bool NotEquals(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays != other.NumberOfDays);
+    return (first.NumberOfDays != second.NumberOfDays);
 }
 
-bool HospitalStay::GreaterThan(const HospitalStay& other)
+bool GreaterThan(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays > other.NumberOfDays);
+    return (first.NumberOfDays > second.NumberOfDays);
 }
 
-bool HospitalStay::GreaterThanEquals(const HospitalStay& other)
+bool GreaterThanEquals(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays >= other.NumberOfDays);
+    return (first.NumberOfDays == second.NumberOfDays);
 }
 
-bool HospitalStay::LessThan(const HospitalStay& other)
+bool LessThan(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays < other.NumberOfDays);
+    return (first.NumberOfDays < second.NumberOfDays);
 }
 
-bool HospitalStay::LessThanEquals(const HospitalStay& other)
+bool LessThanEquals(const HospitalStay& first, const HospitalStay& second)
 {
-    return (NumberOfDays <= other.NumberOfDays);
+    return (first.NumberOfDays <= second.NumberOfDays);
 }
 
 //constructor

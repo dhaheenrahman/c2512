@@ -19,10 +19,10 @@ int main() {
     cout << "GreaterThan: " << GreaterThan(v1,v2) << endl;
     cout << "LessThanEquals: " << LessThanEquals(v1,v2) << endl;
 
-    cout << "Equals: " << hs1.Equals(hs2) << endl;
-    cout << "GreaterThan: " << hs1.GreaterThan(hs2) << endl;
-    cout << "LessThanEquals: " << hs1.LessThanEquals(hs2) << endl;
 
+    cout << "Equals: " << Equals(hs1,hs2) << endl;
+    cout << "GreaterThan: " << GreaterThan(hs1,hs2) << endl;
+    cout << "LessThanEquals: " << LessThanEquals(hs1,hs2) << endl;
     return 0;
 }
 

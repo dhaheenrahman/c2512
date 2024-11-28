@@ -11,12 +11,18 @@ class HospitalStay
         int NumberOfDays;
     public:
         //behaviours
-        bool Equals(const HospitalStay& other);
-        bool NotEquals(const HospitalStay& other);
-        bool GreaterThan(const HospitalStay& other);
-        bool GreaterThanEquals(const HospitalStay& other);
-        bool LessThan(const HospitalStay& other);
-        bool LessThanEquals(const HospitalStay& other);
-        //constructor
+	friend bool Equals(const HospitalStay& first, const HospitalStay& second);
+	friend bool NotEquals(const HospitalStay& first, const HospitalStay& second);
+	friend bool GreaterThan(const HospitalStay& first, const HospitalStay& second);
+	friend bool GreaterThanEquals(const HospitalStay& first, const HospitalStay& second);
+	friend bool LessThan(const HospitalStay& first, const HospitalStay& second);
+	friend bool LessThanEquals(const HospitalStay& first, const HospitalStay& second);
         HospitalStay(string p_StayID, int p_NumberOfDays);
 };
+
+bool Equals(const HospitalStay& first, const HospitalStay& second);
+bool NotEquals(const HospitalStay& first, const HospitalStay& second);
+bool GreaterThan(const HospitalStay& first, const HospitalStay& second);
+bool GreaterThanEquals(const HospitalStay& first, const HospitalStay& second);
+bool LessThan(const HospitalStay& first, const HospitalStay& second);
+bool LessThanEquals(const HospitalStay& first, const HospitalStay& second);
