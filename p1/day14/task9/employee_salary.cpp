@@ -1,11 +1,11 @@
 #include <iostream>
 #include <climits>
-#define MAX_SIZE 3
+#define MAX_SIZE 10
 
 using std::cout;
 using std::cin;
 
-void inputSalary(int salaries[], int size){
+void inputSalaries(int salaries[], int size){
 	for(int i = 0; i < size; i++){
 		cout << "Enter salary for employee " << (i + 1) <<": ";
 		cin >> salaries[i];
@@ -46,17 +46,14 @@ void printSalaries(int salaries[], int size){
 int main(){
 	int salaries[MAX_SIZE];
 
-	inputSalary(salaries, MAX_SIZE);
+	inputSalaries(salaries, MAX_SIZE);
+	
 	int secondHighestSalary = findSecondHighestSalary(salaries, MAX_SIZE);
 
 	cout << "\nSecond Highest Salary: " << secondHighestSalary << "\n\n";
 
-	if(isFiveDigits(secondHighestSalary)){
-		cout << "Second highest salary is 5-digits\n\n";
-	} else{
-		cout << "Second highest salary is not 5-digits\n\n";
-	}
-
+	isFiveDigits(secondHighestSalary) ? cout << "Second highest salary is 5-digits\n\n" : cout << "Second highest salary is not 5-digits\n\n";
+	
 	printSalaries(salaries, MAX_SIZE);
 	
 	return 0;	

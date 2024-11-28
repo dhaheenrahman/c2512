@@ -1,0 +1,44 @@
+1. Create a directory called `cpp_project` to store your C++ programs.
+	"mkdir cpp_project"
+
+2. Navigate into the `cpp_project` directory.
+	"cd cpp_project"
+
+3. Create a C++ file named `first_program.cpp` in the directory.
+	"touch first_program.cpp"
+
+4. Write a simple C++ program inside `first_program.cpp` that prints "Hello, World!" to the console.
+	"nano first_program.cpp"
+
+	code:
+ 
+	#include<iostream>
+
+	int main(){
+        	std::cout << "Hello World!\n";
+        
+		return 0;
+	}
+
+	saving:
+
+	"Ctrl + x"
+	"Y"
+	"Enter"
+
+5. Compile the C++ program into an executable.
+	"g++ first_program.cpp"	OR
+	"g++ -o first_program.out first_program.cpp"
+
+6. Run the compiled executable to check the output.
+	"./a.out" OR "./first_program.out "
+
+7. View the contents of `first_program.cpp`.
+	"cat first_program.cpp"
+
+8. Remove the `first_program.cpp` file after testing it.
+	"rm first_program.cpp"
+
+9. Check if the directory `cpp_project` is empty and then remove it if it is.
+	"rm a.out"
+	"rmdir ../cpp_project"
