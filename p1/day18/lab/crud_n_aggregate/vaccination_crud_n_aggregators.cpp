@@ -9,9 +9,11 @@ class Vaccination{
     friend class VaccinationManager;
 
     private:
+        //members
         string VaccinationID;
         int DosesAdministered;
     public:
+        //behaviours
         bool Equals(const Vaccination& other);
 		bool NotEquals(const Vaccination& other);
 		bool GreaterThan(const Vaccination& other);
@@ -19,6 +21,7 @@ class Vaccination{
 		bool LessThan(const Vaccination& other);
 		bool LessThanEquals(const Vaccination& other);
 
+        //getters
         string getVaccinationID();
         int getDosesAdministered();
 };
@@ -26,6 +29,7 @@ class Vaccination{
 class VaccinationManager{
     friend class VaccinationAggregator;
     friend int main();
+
     private:
         Vaccination vaccinations[MAX_SIZE];
         int numOfVaccinations;
@@ -162,6 +166,8 @@ void VaccinationManager::create(){
     cin >> vaccinations[numOfVaccinations].DosesAdministered;
 
     numOfVaccinations++;
+
+    cout << "New record created!\n";
 }
 
 void VaccinationManager::displayAll(){
@@ -191,12 +197,13 @@ void VaccinationManager::editByID(){
         return;
     }
 
-    cout << "Current ID: " << vaccinations[index].VaccinationID;
+    // cout << "Current ID: " << vaccinations[index].VaccinationID;
     cout << "Current Doses Admininstered: " << vaccinations[index].DosesAdministered;
-    cout << "\n\nEnter new ID: ";
-    cin >> vaccinations[index].VaccinationID;
-    cout << "Enter new Doses Administered: ";
+    // cout << "\n\nEnter new ID: ";
+    // cin >> vaccinations[index].VaccinationID;
+    cout << "\nEnter new Doses Administered: ";
     cin >> vaccinations[index].DosesAdministered;
+    cout << "Record updated!\n";
 }
 
 void VaccinationManager::deleteByID(){
@@ -222,6 +229,8 @@ void VaccinationManager::deleteByID(){
     }
 
     numOfVaccinations--;
+
+    cout << "Record deleted!\n";
 }
 
 int VaccinationManager::findIndexById(string id) {
@@ -230,32 +239,38 @@ int VaccinationManager::findIndexById(string id) {
             return i;
         }
     }
+
     return -1;
 }
 
 int VaccinationAggregator::findMinDoseIndex(VaccinationManager& manager){
     int minIndex = 0;
+
     for(int i = 1; i < manager.numOfVaccinations; i++){
         if(manager.vaccinations[i].LessThan(manager.vaccinations[minIndex])){
             minIndex = i;
         }
     }
+
     return minIndex;
 }
 
 int VaccinationAggregator::findMaxDoseIndex(VaccinationManager& manager){
     int maxIndex = 0;
+
     for(int i = 1; i < manager.numOfVaccinations; i++){
         if(manager.vaccinations[i].GreaterThan(manager.vaccinations[maxIndex])){
             maxIndex = i;
         }
     }
+
     return maxIndex;
 }
 
 int VaccinationAggregator::findSecondMinDoseIndex(VaccinationManager& manager){
     int minIndex = findMinDoseIndex(manager);
     int secondMinIndex = (minIndex == 0) ? 1 : 0;
+
     for(int i = 1; i < manager.numOfVaccinations; i++){
         if(i != minIndex){
             if(manager.vaccinations[i].LessThan(manager.vaccinations[secondMinIndex])){
@@ -263,12 +278,14 @@ int VaccinationAggregator::findSecondMinDoseIndex(VaccinationManager& manager){
             }
         }
     }
+
     return secondMinIndex;
 }
 
 int VaccinationAggregator::findSecondMaxDoseIndex(VaccinationManager& manager){
     int maxIndex = findMaxDoseIndex(manager);
     int secondMaxIndex = (maxIndex == 0) ? 1 : 0;
+
     for(int i = 1; i < manager.numOfVaccinations; i++){
         if(i != maxIndex){
             if(manager.vaccinations[i].GreaterThan(manager.vaccinations[secondMaxIndex])){
@@ -276,11 +293,12 @@ int VaccinationAggregator::findSecondMaxDoseIndex(VaccinationManager& manager){
             }
         }
     }
+
     return secondMaxIndex;
 }
 
 void printMenu(){
-    cout << "1. Create new Vaccination record\n";
+    cout << "\n1. Create new Vaccination record\n";
     cout << "2. Delete a record\n";
     cout << "3. Edit a record\n";
     cout << "4. Display all records\n";

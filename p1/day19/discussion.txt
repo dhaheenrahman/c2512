@@ -1,0 +1,6 @@
+Shell Scripting:
+    #!/(path) : (shebang) to tell the OS which interpreter to be used .
+
+    echo "Hello" : To print Hello
+    read x       : To read the value to variable x.
+    echo -n "msg": To avoid new line before next line.
