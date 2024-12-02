@@ -1,0 +1,5 @@
+Weekend Tasks assigned:
+
+1. Portfolio
+2. Linux 3 Tasks (2 tasks + Evolution of Linux)
+3. CRUD + Aggregators on Vaccination Case.
