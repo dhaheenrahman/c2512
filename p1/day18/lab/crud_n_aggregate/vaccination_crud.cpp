@@ -57,6 +57,7 @@ int main(){
                 break;
             case 5:
                 cout << "Good Bye!";
+                break;
             default:
                 cout << "Invalid input";
             
@@ -93,6 +94,9 @@ void VaccinationManager::create(){
     cin >> vaccinations[numOfVaccinations].DosesAdministered;
 
     numOfVaccinations++;
+
+    cout << "New record created!\n";
+
 }
 
 void VaccinationManager::displayAll(){
@@ -122,12 +126,14 @@ void VaccinationManager::editByID(){
         return;
     }
 
-    cout << "Current ID: " << vaccinations[index].VaccinationID;
+    // cout << "Current ID: " << vaccinations[index].VaccinationID;
     cout << "Current Doses Admininstered: " << vaccinations[index].DosesAdministered;
-    cout << "\n\nEnter new ID: ";
-    cin >> vaccinations[index].VaccinationID;
-    cout << "Enter new Doses Administered: ";
+    // cout << "\n\nEnter new ID: ";
+    // cin >> vaccinations[index].VaccinationID;
+    cout << "\nEnter new Doses Administered: ";
     cin >> vaccinations[index].DosesAdministered;
+    cout << "Record updated!\n";
+
 }
 
 void VaccinationManager::deleteByID(){
@@ -153,6 +159,8 @@ void VaccinationManager::deleteByID(){
     }
 
     numOfVaccinations--;
+
+    cout << "Record deleted!\n";
 }
 
 int VaccinationManager::findIndexById(string id) {
