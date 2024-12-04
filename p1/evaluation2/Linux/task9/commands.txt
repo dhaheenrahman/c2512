@@ -1,0 +1,14 @@
+1. creating a directory for the task.
+	"mkdir task9"
+
+2. Navigate to the new directory.
+	"cd task9"
+
+3. Create and open a new file 'employee_salary.cpp'.
+	"vi employee_salary.cpp"
+
+4. Compile the code after implementing required functons.
+	"g++ -o App.out employee_salary.cpp"
+
+5. Run the executable file.
+	"./App.out"
