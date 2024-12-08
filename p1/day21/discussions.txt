@@ -1,0 +1,2 @@
+We usually overload ostream and istream as non-member function only. 
+Because we have to pass one argument as ostream& object and other as object.

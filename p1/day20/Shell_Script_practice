@@ -1,0 +1,11 @@
+1. Print Greeting
+    echo "Hello bash!"
+
+2. Variable
+    name="Alice"
+    echo "Hello $name"
+
+3. 
+    echo $0 $? $$
+
+4. 
