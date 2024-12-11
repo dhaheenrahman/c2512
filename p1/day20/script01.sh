@@ -1,4 +1,7 @@
-nums=(3 2 1 Alice)
-nums[10]=8
-
-echo ${nums[9]}
+#!/bin/bash
+findSum(){
+	read -p "num1: " num1
+	read -p "num2: " num2
+	echo $((num1 + num2))
+}
+findSum
