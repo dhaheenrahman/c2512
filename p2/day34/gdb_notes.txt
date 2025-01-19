@@ -1,0 +1,22 @@
+Basics of Debugger Gdb:-
+
+Compile source file with -g flag
+    g++ -g main.cpp
+
+Run Debugger
+    gdb ./a.out
+
+Switch on source code in gdb terminal
+    tui enable
+
+commands in gdb:
+
+break <Line number>:- To set breakpoint 
+run (or r) :- To run instruction from a break point
+next (or n) :- To execute next instruction
+continue (or n) :- To go to next break point.
+step (or s) :- To step multiple steps. Eg: step 2 will take to 2nd instruction from that point 
+info breakpoint :- Show breakpoints
+info local :- show values of local varibales at that instance
+print <variable_name> :- print value of variable at that instance
+quit (or q) :- To quit
